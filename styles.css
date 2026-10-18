@@ -405,6 +405,7 @@ b,strong{font-weight:700;color:#fff}
 .tag--hf{color:#ffd88f;background:rgba(255,176,32,.14);border:1px solid rgba(255,176,32,.3)}
 .tag--uv{color:#a9ecf5;background:rgba(95,216,232,.13);border:1px solid rgba(95,216,232,.3)}
 .tag--gold{color:#1a1200;background:linear-gradient(120deg,var(--gold),#ffd77a)}
+.tag--swl{color:#c7ffe2;background:rgba(86,214,150,.14);border:1px solid rgba(86,214,150,.34)}
 
 /* 天线可视示意 */
 .ant__viz{
@@ -461,7 +462,9 @@ b,strong{font-weight:700;color:#fff}
 .bands td:last-child{min-width:190px;color:var(--ink-2)}
 
 /* ── 7. 奖状 ─────────────────────────────────────────────────── */
-.awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.3rem}
+/* auto-fit：奖状张数变化时自动重排（1 张 1 列 / 2–3 张并排 / 窄屏 1 列），
+   不必每次新增奖状就改栅格定义 */
+.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
 .award{
   position:relative;display:flex;flex-direction:column;
   border-radius:var(--r);overflow:hidden;
@@ -475,10 +478,12 @@ b,strong{font-weight:700;color:#fff}
   background:linear-gradient(100deg,rgba(255,176,32,.9),rgba(255,176,32,.25) 62%,transparent);
 }
 .award__ribbon--blue{background:linear-gradient(100deg,rgba(58,160,238,.9),rgba(58,160,238,.25) 62%,transparent)}
+.award__ribbon--green{background:linear-gradient(100deg,rgba(86,214,150,.9),rgba(86,214,150,.25) 62%,transparent)}
 .award__ribbon span{
   font:800 .7rem/1 var(--mono);letter-spacing:.22em;color:#0a0f18;text-transform:uppercase;
 }
 .award__ribbon--blue span{color:#02121f}
+.award__ribbon--green span{color:#03150d}
 .award__body{padding:1.25rem 1.4rem 1.4rem;display:flex;flex-direction:column;flex:1}
 .award__body h3{
   margin:0 0 .45rem;font:750 1.1rem/1.35 var(--sans);color:#fff;
