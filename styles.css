@@ -566,6 +566,25 @@ b,strong{font-weight:700;color:#fff}
 .logstat__row:nth-child(odd){background:rgba(58,160,238,.06)}
 .logstat__row b{color:var(--gold);font-weight:700}
 
+/* ── 9b. 近期通联（嵌入 QRZ Logbook 统计页）──────────────────────
+   QRZ 的统计页是浅色页面，放在深色卡片里会像一块发光的矩形。
+   所以给它加白色衬底 + 内边距 + 外阴影，做成"嵌入式面板"，看起来是刻意的。 */
+.card--logfeed{margin-top:1.3rem}
+.logfeed__intro{margin:0 0 1.1rem;color:var(--ink-2);font-size:.92rem;line-height:1.8}
+.logfeed__frame{
+  max-width:680px;margin:0 auto;padding:8px;
+  border-radius:var(--r-sm);background:#fff;
+  border:1px solid var(--line-2);
+  box-shadow:0 14px 34px -20px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.04);
+}
+.logfeed__frame iframe{display:block;width:100%;height:500px;border:0;background:#fff;border-radius:4px}
+.logfeed__more{margin:1rem 0 0;text-align:center;font-size:.82rem;color:var(--ink-3)}
+.logfeed__more a{font-weight:600}
+@media (max-width:620px){
+  .logfeed__frame{padding:5px}
+  .logfeed__frame iframe{height:420px}
+}
+
 .term{
   margin:0;padding:1rem 1.1rem;border-radius:var(--r-sm);overflow-x:auto;
   font:500 .8rem/1.95 var(--mono);color:#b6f0f8;
