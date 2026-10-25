@@ -269,6 +269,8 @@ b,strong{font-weight:700;color:#fff}
 }
 .shot:hover .shot__zoom{opacity:1}
 .shot--wide{margin-top:1rem}
+/* 奖状缩略图原生 440px 宽：2 列布局下不再放大，保持 1:1 清晰度 */
+.award .shot--wide{max-width:440px;margin-inline:auto}
 
 .hero__art figcaption{
   margin-top:.7rem;font-size:.78rem;color:var(--ink-3);line-height:1.7;
@@ -464,7 +466,7 @@ b,strong{font-weight:700;color:#fff}
 /* ── 7. 奖状 ─────────────────────────────────────────────────── */
 /* auto-fit：奖状张数变化时自动重排（1 张 1 列 / 2–3 张并排 / 窄屏 1 列），
    不必每次新增奖状就改栅格定义 */
-.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
+.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(390px,1fr));gap:1.3rem}
 .award{
   position:relative;display:flex;flex-direction:column;
   border-radius:var(--r);overflow:hidden;
@@ -479,11 +481,13 @@ b,strong{font-weight:700;color:#fff}
 }
 .award__ribbon--blue{background:linear-gradient(100deg,rgba(58,160,238,.9),rgba(58,160,238,.25) 62%,transparent)}
 .award__ribbon--green{background:linear-gradient(100deg,rgba(86,214,150,.9),rgba(86,214,150,.25) 62%,transparent)}
+.award__ribbon--violet{background:linear-gradient(100deg,rgba(168,124,255,.9),rgba(168,124,255,.25) 62%,transparent)}
 .award__ribbon span{
   font:800 .7rem/1 var(--mono);letter-spacing:.22em;color:#0a0f18;text-transform:uppercase;
 }
 .award__ribbon--blue span{color:#02121f}
 .award__ribbon--green span{color:#03150d}
+.award__ribbon--violet span{color:#150526}
 .award__body{padding:1.25rem 1.4rem 1.4rem;display:flex;flex-direction:column;flex:1}
 .award__body h3{
   margin:0 0 .45rem;font:750 1.1rem/1.35 var(--sans);color:#fff;
